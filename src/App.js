@@ -1,6 +1,7 @@
 import './App.css';
 import styled from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
+import FrontBanner from './components/FrontBanner/FrontBanner';
 
 const AllContent = styled.div`
   padding: 20px;
@@ -13,6 +14,7 @@ function App() {
   return (
     <AllContent>
       <Navbar />
+      <FrontBanner />
     </AllContent>
   );
 }
