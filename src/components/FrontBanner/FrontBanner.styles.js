@@ -2,10 +2,9 @@ import styled from "styled-components";
 import mainBackground from '../../img/main-bg.jpg';
 
 export const FrontBannerContainer = styled.div`
-    margin: -20px;
     margin-top: 30px;
     background-image: url(${mainBackground});
-    background-size: 110% 90vh;
+    background-size: 110% 100%;
     background-repeat: no-repeat;
     height: 100vh;
 `;

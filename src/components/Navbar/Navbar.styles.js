@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const NavbarContainer = styled.div`
     text-align: right;
+    padding: 20px 20px 0px;
 `;
 
 export const NavbarHeading = styled.h2`
