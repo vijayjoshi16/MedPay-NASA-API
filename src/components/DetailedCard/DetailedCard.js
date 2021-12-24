@@ -1,6 +1,5 @@
-import { DialogContent } from "@material-ui/core";
+import { Dialog, DialogContent } from "@material-ui/core";
 import { useState } from "react";
-import { DetailedDialog } from "./DetailedCard.styles";
 
 const DetailedCard = (props)=>{
     const [open, setOpen] = useState(true);
@@ -10,17 +9,22 @@ const DetailedCard = (props)=>{
 
     const closeDialog = ()=>{
         setOpen(false);
-        props.closeFuntion();
+        props.closeFunction();
     }
 
     return(
-        <DetailedDialog
+        <Dialog
         open={open}
         onBackdropClick={closeDialog}>
             <DialogContent>
                 <h2>ASTEROID DETAILS</h2>
                 <p>Name: {asteroidData.name}</p>
-                <p>Designation: {asteroidData.designation}</p>
+                {
+                    asteroidData.designation!==undefined
+                    &&
+                    <p>Designation: {asteroidData.designation}</p>
+                }
+                
                 <p>Absolute magnitude: {asteroidData.absolute_magnitude_h}</p>
                 <p>{asteroidData.is_potentially_hazardous_asteroid?"Potentially Hazardous":"Not Potentially Hazardous"}</p>
                 <p>{asteroidData.is_sentry_object?"Sentry Object":"Not A Sentry Object"}</p>
@@ -46,7 +50,7 @@ const DetailedCard = (props)=>{
                     </div>
                 }
             </DialogContent>
-        </DetailedDialog>
+        </Dialog>
     )
 };
 

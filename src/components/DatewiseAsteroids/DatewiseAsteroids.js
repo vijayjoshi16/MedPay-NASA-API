@@ -3,12 +3,17 @@ import { useState } from "react";
 import AsteroidCard from "../AsteroidCard/AsteroidCard";
 import { AsteroidList } from "../Asteroids/Asteroids.styles";
 import { errorToast } from "../toast";
+import DetailedCard from "../DetailedCard/DetailedCard";
 import { DatewiseContainer, DatewiseHeading, DateInput, Button } from "./DatewiseAsteroids.styles";
 import loadingGIF from '../../img/loading.gif';
 
 const DatewiseAsteroids = ()=>{
     const [startDate, setStartDate] = useState("2021-12-24");
     const [endDate, setEndDate] = useState("2021-12-24");
+
+    const [selectedAsteroid, setSelectedAsteroid] = useState(undefined);
+
+    const closeDialog = ()=>{setSelectedAsteroid(undefined)};
 
     const [searchResults, setSearchResults] = useState([]);
     const [limit, setLimit] = useState(0);
@@ -86,7 +91,8 @@ const DatewiseAsteroids = ()=>{
                     {
                         searchResults.slice(0,limit).map(data=>{
                             return(
-                                <Grid item xs={12} sm={6} md={4} lg={3}>
+                                <Grid item xs={12} sm={6} md={4} lg={3}
+                                onClick={()=>{setSelectedAsteroid(data)}}>
                                 <AsteroidCard data={data} showLastObserved={false}/>
                                 </Grid>
                             )
@@ -102,7 +108,14 @@ const DatewiseAsteroids = ()=>{
                     MORE
                     </Button>
                 }
-                
+                {
+                    selectedAsteroid!==undefined
+                    &&
+                    <DetailedCard 
+                        data={selectedAsteroid}
+                        closeFunction={closeDialog}
+                    />
+                }
             </AsteroidList>
         </DatewiseContainer>
     )

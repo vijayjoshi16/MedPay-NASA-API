@@ -3,10 +3,14 @@ import { Grid } from "@material-ui/core";
 import { AsteroidContainer, AsteroidHeader, AsteroidList } from "./Asteroids.styles";
 import loading from '../../img/loading.gif';
 import AsteroidCard from "../AsteroidCard/AsteroidCard";
+import DetailedCard from "../DetailedCard/DetailedCard";
 import {errorToast} from '../toast.js';
 
 const Asteroids = ()=>{
     const [asteroidData, setAsteroidData] = useState([]);
+    const [selectedAsteroid, setSelectedAsteroid] = useState(undefined);
+
+    const closeDialog = ()=>{setSelectedAsteroid(undefined)};
     
     useEffect(()=>{
         fetch(
@@ -39,8 +43,9 @@ const Asteroids = ()=>{
                         {
                             asteroidData.map(data=>{
                                 return(
-                                    <Grid item xs={12} sm={6} md={4} lg={3}>
-                                        <AsteroidCard data={data} showLastObserved={true}/>
+                                    <Grid item xs={12} sm={6} md={4} lg={3}
+                                    onClick={()=>{setSelectedAsteroid(data)}}>
+                                        <AsteroidCard data={data} showLastObserved={true} />
                                     </Grid>
                                 )
                             })
@@ -54,6 +59,14 @@ const Asteroids = ()=>{
                     
                 }
             </AsteroidList>
+            {
+                selectedAsteroid!==undefined
+                &&
+                <DetailedCard 
+                    data={selectedAsteroid}
+                    closeFunction={closeDialog}
+                />
+            }
         </AsteroidContainer>
     )
 };

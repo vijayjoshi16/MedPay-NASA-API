@@ -60,7 +60,7 @@ const Search = ()=>{
                 &&
                 <DetailedCard 
                     data={asteroidData}
-                    closeFuntion={closeDialog}
+                    closeFunction={closeDialog}
                 />
             }
         </SearchContainer>
