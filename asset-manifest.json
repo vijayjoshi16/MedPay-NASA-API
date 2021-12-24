@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/vijayjoshi16/MedPay-NASA-API/static/css/main.76a11260.css",
+    "main.js": "/vijayjoshi16/MedPay-NASA-API/static/js/main.8632bdf3.js",
+    "static/js/787.76c44bff.chunk.js": "/vijayjoshi16/MedPay-NASA-API/static/js/787.76c44bff.chunk.js",
+    "static/media/main-bg.jpg": "/vijayjoshi16/MedPay-NASA-API/static/media/main-bg.2e8c3ba00ee17c41a985.jpg",
+    "static/media/loading.gif": "/vijayjoshi16/MedPay-NASA-API/static/media/loading.d17936077b1c1d5dfbb3.gif",
+    "static/media/comet.png": "/vijayjoshi16/MedPay-NASA-API/static/media/comet.820634a7518739a8d78f.png",
+    "index.html": "/vijayjoshi16/MedPay-NASA-API/index.html",
+    "main.76a11260.css.map": "/vijayjoshi16/MedPay-NASA-API/static/css/main.76a11260.css.map",
+    "main.8632bdf3.js.map": "/vijayjoshi16/MedPay-NASA-API/static/js/main.8632bdf3.js.map",
+    "787.76c44bff.chunk.js.map": "/vijayjoshi16/MedPay-NASA-API/static/js/787.76c44bff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.76a11260.css",
+    "static/js/main.8632bdf3.js"
+  ]
+}
