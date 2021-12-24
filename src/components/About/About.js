@@ -4,7 +4,7 @@ import aboutData from "./AboutData";
 
 const About = ()=>{
     return(
-        <>
+        <div id="about">
             <AboutHeading>ABOUT NASA API</AboutHeading>
             <Grid container>
                 <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -16,7 +16,7 @@ const About = ()=>{
                     }
                 </Grid> 
             </Grid>
-        </>
+        </div>
     )
 };
 

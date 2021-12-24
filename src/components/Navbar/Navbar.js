@@ -17,12 +17,21 @@ const Navbar = ()=>{
                 </Grid>
                 <Hidden smDown={true}>
                 <Grid item xs={12} sm={12} md={6} lg={8}>
-                    <NavbarOption>
-                        Explore
-                    </NavbarOption>
-                    <NavbarOption>
-                        Search
-                    </NavbarOption>
+                    <a href="#about">
+                        <NavbarOption>
+                            About
+                        </NavbarOption>
+                    </a>
+                    <a href="#explore">
+                        <NavbarOption>
+                            Explore
+                        </NavbarOption>
+                    </a>
+                    <a href="#search">
+                        <NavbarOption>
+                            Search
+                        </NavbarOption>
+                    </a>
                 </Grid>
                 </Hidden>
             </Grid>
@@ -40,13 +49,23 @@ const Navbar = ()=>{
             onClose={()=>{setDrawerOpen(false)}}
             >
                 <DrawerContent>
-                    <NavbarOption>
-                        Explore
-                    </NavbarOption>
+                    <a href="#about">
+                        <NavbarOption>
+                            About
+                        </NavbarOption>
+                    </a>
                     <br></br><br></br>
-                    <NavbarOption>
-                        Search
-                    </NavbarOption>
+                    <a href="#explore">
+                        <NavbarOption>
+                            Explore
+                        </NavbarOption>
+                    </a>
+                    <br></br><br></br>
+                    <a href="#search">
+                        <NavbarOption>
+                            Search
+                        </NavbarOption>
+                    </a>
                 </DrawerContent>
             </SwipeableDrawer>
         </NavbarContainer>

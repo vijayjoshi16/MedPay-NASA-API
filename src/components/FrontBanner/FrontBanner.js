@@ -5,7 +5,9 @@ const FrontBanner = ()=>{
         <FrontBannerContainer>
             <BannerHeading>NASA API PROJECT</BannerHeading>
             <BannerSubHeading>A place to explore everything about near earth asteroids</BannerSubHeading>
-            <KnowMoreButton>↓ Know More ↓</KnowMoreButton>
+            <a href="#about">
+                <KnowMoreButton>↓ Know More ↓</KnowMoreButton>
+            </a>
         </FrontBannerContainer>
     )
 };

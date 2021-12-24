@@ -23,16 +23,15 @@ const Asteroids = ()=>{
             }
         ).then(res=>res.json())
         .then(res=>{
-            console.log(res);
             setAsteroidData(res.near_earth_objects);
         })
-        .catch(err=>{
+        .catch(()=>{
             errorToast("Something went wrong while fetching data!");
         })
     },[]);
 
     return(
-        <AsteroidContainer>
+        <AsteroidContainer id="explore">
             <AsteroidHeader>ASTEROID FEED</AsteroidHeader>
             <p>Click on an asteroid to know more</p>
             <AsteroidList>

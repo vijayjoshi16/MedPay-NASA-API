@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import { useState } from "react";
 import AsteroidCard from "../AsteroidCard/AsteroidCard";
 import { AsteroidList } from "../Asteroids/Asteroids.styles";
-import { errorToast } from "../toast";
+import { errorToast, successToast } from "../toast";
 import DetailedCard from "../DetailedCard/DetailedCard";
 import { DatewiseContainer, DatewiseHeading, DateInput, Button } from "./DatewiseAsteroids.styles";
 import loadingGIF from '../../img/loading.gif';
@@ -52,6 +52,7 @@ const DatewiseAsteroids = ()=>{
             }
             setLimit(Math.min(12,results.length));
             setSearchResults(results);
+            successToast("Successfully fetched data!");
         })
         .catch(err=>{
             errorToast("Something went wrong while fetching data!");
@@ -62,7 +63,7 @@ const DatewiseAsteroids = ()=>{
     }
 
     return(
-        <DatewiseContainer>
+        <DatewiseContainer id="search">
             <DatewiseHeading>DATEWISE ASTEROIDS</DatewiseHeading>
             <p>Search for asteroids on the basis of start date and end date</p>
             <AsteroidList>

@@ -15,6 +15,7 @@ export const NavbarOption = styled.span`
     margin-right: 100px;
     margin-top: 12.5px;
     cursor: pointer;
+    color: white;
 `;
 
 export const MenuButton = styled.button`
