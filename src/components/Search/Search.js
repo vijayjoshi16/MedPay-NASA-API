@@ -23,8 +23,12 @@ const Search = ()=>{
         ).then(res=>res.json())
         .then(res=>{
             console.log(res);
-            successToast("Successfully found the asteroid");
-            setAsteroidData(res);
+            if(!res.http_error){
+                successToast("Successfully found the asteroid");
+                setAsteroidData(res);
+            }else{
+                errorToast("Could not find the desired asteroid!");
+            }
         })
         .catch(()=>{
             errorToast("Could not find the desired asteroid!");
