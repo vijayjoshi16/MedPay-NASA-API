@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Asteroids from './components/Asteroids/Asteroids';
 import DatewiseAsteroids from './components/DatewiseAsteroids/DatewiseAsteroids';
 import Search from './components/Search/Search';
+import Footer from './components/Footer/Footer';
 
 const AllContent = styled.div`
   text-align: center;
@@ -22,8 +23,7 @@ function App() {
       <Asteroids />
       <DatewiseAsteroids />
       <Search />
-      <a href="https://www.freepik.com/vectors/background">Background vector created by freepik - www.freepik.com</a>
-      <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <Footer />
     </AllContent>
   );
 }
