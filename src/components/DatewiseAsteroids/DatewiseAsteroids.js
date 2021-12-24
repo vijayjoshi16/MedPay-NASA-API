@@ -15,6 +15,19 @@ const DatewiseAsteroids = ()=>{
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = ()=>{
+        const dateBeginning = new Date(startDate);
+        const dateEnd = new Date(endDate);
+        const dayDifference = parseInt((dateEnd - dateBeginning) / (1000 * 60 * 60 * 24), 10); 
+        if(dayDifference<0){
+            errorToast("Please enter valid interval!");
+            return;
+        }
+        
+        if(dayDifference>7){
+            errorToast("Please enter interval length <= 7 days!");
+            return;
+        }
+
         setSearchResults([]);
         setLimit(0);
         setLoading(true);
@@ -32,7 +45,6 @@ const DatewiseAsteroids = ()=>{
             for(const date in res.near_earth_objects){
                 results = [...results, ...res.near_earth_objects[date]];
             }
-            console.log(results);
             setLimit(Math.min(12,results.length));
             setSearchResults(results);
         })

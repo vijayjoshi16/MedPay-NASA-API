@@ -22,7 +22,7 @@ export const Button = styled.button`
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    height: 50px;
+    height: 56px;
     width: 100px;
     margin: 10px;
     outline: none;
@@ -30,4 +30,4 @@ export const Button = styled.button`
     &:hover{
         transform: scale(1.05);
     }
-`
+`;
