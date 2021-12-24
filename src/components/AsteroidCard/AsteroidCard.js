@@ -17,12 +17,15 @@ const AsteroidCard = (props)=>{
                 <img src={props.data.is_potentially_hazardous_asteroid?unsafe:safe} />
                 <DetailText>{props.data.is_potentially_hazardous_asteroid?"Potentially Hazardous":"Not Potentially Hazardous"}</DetailText>
             </DetailContainer>
-            <DetailContainer>
+            {
+                props.showLastObserved && <DetailContainer>
                 <img src={calendar} />
-                <DetailText>
-                    Last observered at: {props.data.orbital_data.last_observation_date}
-                </DetailText>
-            </DetailContainer>
+                    <DetailText>
+                        Last observered at: {props.data.orbital_data!=null?props.data.orbital_data.last_observation_date:"Not available"}
+                    </DetailText>
+                </DetailContainer>
+            }
+            
             <DetailContainer>
                 <img src={measure} />
                 <DetailText>

@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const CardContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.4);
     margin: 10px;
-    min-height: 210px;
     border-radius: 15px;
     padding: 5px;
     text-align: left;
